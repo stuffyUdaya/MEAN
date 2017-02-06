@@ -85,34 +85,46 @@
 //   type: 'old fashioned',
 // }
 
-var glazedDonuts = [
-  {
-    frosting: 'glazed',
-    type: 'old fashioned',
-    age: '45',
-    time: 'minutes'
-  },
-  {
-    frosting: 'glazed',
-    type: 'regular',
-    age: '5',
-    time: 'minutes'
-  },
-  {
-    frosting: 'glazed',
-    type: 'jelly filled',
-    age: '3',
-    time: 'seconds'
-  }
-];
+// var glazedDonuts = [
+//   {
+//     frosting: 'glazed',
+//     type: 'old fashioned',
+//     age: '45',
+//     time: 'minutes'
+//   },
+//   {
+//     frosting: 'glazed',
+//     type: 'regular',
+//     age: '5',
+//     time: 'minutes'
+//   },
+//   {
+//     frosting: 'glazed',
+//     type: 'jelly filled',
+//     age: '3',
+//     time: 'seconds'
+//   }
+// ];
+//
+// var purchase;
+// //You
+// if(glazedDonuts[2].age < 25 && (glazedDonuts[2].time == 'seconds' || glazedDonuts[2].time == 'minutes')){
+//   //shop owner
+//   purchase = glazedDonuts[2];
+//   console.log(glazedDonuts[2].type +" donuts has been purchased" );
+// }
+// else {
+//   console.log('sorry it has been out a bit longer');
+// }
 
-var purchase;
-//You
-if(glazedDonuts[2].age < 25 && (glazedDonuts[2].time == 'seconds' || glazedDonuts[2].time == 'minutes')){
-  //shop owner
-  purchase = glazedDonuts[2];
-  console.log(glazedDonuts[2].type +" donuts has been purchased" );
+var varFunction;
+// varFunction();
+ varFunction = function() {
+  console.log("How will this get hoisted?")
 }
-else {
-  console.log('sorry it has been out a bit longer');
+varFunction();
+
+awesome();
+function awesome() {
+  console.log("too good to be true");
 }
