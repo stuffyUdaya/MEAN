@@ -19,16 +19,32 @@ var _ = {
      var newarr=[];
      for(var i =0; i<arr.length; i++){
        var num = arr[i];
-      
+
        newarr.push(callback(num));
      }
      return newarr;
      //code here;
    },
-   reduce: function() {
+   reduce: function(arr, callback) {
+     var sum = 0;
+     for(var i =0; i<arr.length; i++){
+       num = arr[i];
+       sum =sum+callback(num);
+     }
      // code here;
+     return sum;
    },
-   find: function() {
+   find: function(arr, callback) {
+     for(var i =0 ; i<arr.length; i++){
+       var num = arr[i];
+       var y = callback(num);
+       if(y == true){
+         return num;
+         break;
+       }
+
+     }
+
      // code here;
    },
    filter: function(arr, callback) {
@@ -46,7 +62,21 @@ var _ = {
 
      // code here;
    },
-   reject: function() {
+   reject: function(arr, callback) {
+     var newarr =[];
+     for(var i =0; i<arr.length; i++){
+       var num = arr[i];
+       var y = callback(num);
+        if(y == false){
+          newarr.push(num);
+        }
+
+     }
+
+return newarr;
+
+
+
      // code here;
    }
  }
@@ -54,3 +84,6 @@ var _ = {
 
 console.log(_.filter([1,2,3,4], function(num){ return num % 2 == 0; }));
 console.log(_.map([1, 2, 3], function(num){ return num * 4; }));
+console.log(_.reduce([4, 2, 3], function(num){ return num;  }));
+console.log(_.find([1,2,3,4], function(num){ return num % 2 == 0; }));
+console.log(_.reject([1,2,3,4,5,7], function(num){ return num % 2 == 0; }));
