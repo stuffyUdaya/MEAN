@@ -15,7 +15,14 @@
 
 
 var _ = {
-   map: function() {
+   map: function(arr, callback ) {
+     var newarr=[];
+     for(var i =0; i<arr.length; i++){
+       var num = arr[i];
+      
+       newarr.push(callback(num));
+     }
+     return newarr;
      //code here;
    },
    reduce: function() {
@@ -36,7 +43,7 @@ var _ = {
           //  console.log(y);
      }
      return newarr;
-     
+
      // code here;
    },
    reject: function() {
@@ -45,4 +52,5 @@ var _ = {
  }
 // you just created a library with 5 methods!
 
-console.log(_.filter([1,2,3,4,6], function(num){ return num % 2 == 0; }));
+console.log(_.filter([1,2,3,4], function(num){ return num % 2 == 0; }));
+console.log(_.map([1, 2, 3], function(num){ return num * 4; }));
